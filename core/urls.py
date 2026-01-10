@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('mcp-tools/', views.mcp_tools_view.as_view(), name='mcp-tools'),
+    path('mcp-invoke/', views.MCPInvokeView.as_view(), name='mcp-invoke'),
 ]
