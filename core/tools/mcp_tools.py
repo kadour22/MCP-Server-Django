@@ -1,7 +1,7 @@
 TOOLS = [
     {
         "name": "task_create",
-        "description": "Create a new task",
+        "description": "Create a task",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -12,17 +12,15 @@ TOOLS = [
     },
     {
         "name": "task_list",
-        "description": "List all tasks",
+        "description": "List tasks",
         "input_schema": {"type": "object", "properties": {}}
     },
     {
         "name": "task_get",
-        "description": "Retrieve a task by ID",
+        "description": "Get task by id",
         "input_schema": {
             "type": "object",
-            "properties": {
-                "id": {"type": "integer"}
-            },
+            "properties": {"id": {"type": "integer"}},
             "required": ["id"]
         }
     },
@@ -44,10 +42,8 @@ TOOLS = [
         "description": "Delete a task",
         "input_schema": {
             "type": "object",
-            "properties": {
-                "id": {"type": "integer"}
-            },
+            "properties": {"id": {"type": "integer"}},
             "required": ["id"]
         }
-    },
+    }
 ]
