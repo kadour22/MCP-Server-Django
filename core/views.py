@@ -14,7 +14,6 @@ class MCPInvokeView(APIView):
     def post(self, request):
         name = request.data.get("name")
         args = request.data.get("arguments", {})
-
         if name == "task_create":
             serializer = TaskSerializer(data=args)
             serializer.is_valid(raise_exception=True)
