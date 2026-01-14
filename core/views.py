@@ -32,11 +32,9 @@ class MCPInvokeView(APIView):
             serializer.is_valid(raise_exception=True)
             serializer.save()
             return self.ok(serializer.data)
-
         if name == "task_delete":
             Task.objects.filter(id=args["id"]).delete()
             return self.ok({"deleted": True})
-
         return Response(
             {"error": "Unknown tool"},
             status=status.HTTP_400_BAD_REQUEST
