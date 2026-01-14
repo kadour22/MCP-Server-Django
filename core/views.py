@@ -20,16 +20,13 @@ class MCPInvokeView(APIView):
             serializer.is_valid(raise_exception=True)
             serializer.save()
             return self.ok(serializer.data)
-
         if name == "task_list":
             qs = Task.objects.all()
             data = TaskSerializer(qs, many=True).data
             return self.ok(data)
-
         if name == "task_get":
             task = Task.objects.get(id=args["id"])
             return self.ok(TaskSerializer(task).data)
-
         if name == "task_update":
             task = Task.objects.get(id=args["id"])
             serializer = TaskSerializer(task, data=args, partial=True)
