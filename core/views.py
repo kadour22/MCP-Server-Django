@@ -49,3 +49,4 @@ class MCPInvokeView(APIView):
                 }
             ]
         })
+
